@@ -7,7 +7,7 @@ In this assignment, I made LIRI. LIRI is like iPhone's SIRI. However, while SIRI
 
 #### 1. my-tweets 
 ```
-Shows your last 20 tweets and the time they were tweet at
+Shows your last 20 tweets and the time 
 ```
 ![Image of tweets in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/tweets.png)
 
