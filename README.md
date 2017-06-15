@@ -7,7 +7,7 @@
 
 #### my-tweets (shows your last 20 tweets)
 
-#### spotify-this-song '<song name here>' 
+#### spotify-this-song 'song name here' 
 It shows you the following:
   * Artist(s)
   * The song's name
@@ -15,7 +15,7 @@ It shows you the following:
   * The album that the song is from
   (If no song is provided then the program will default to you to "The Sign" by Ace of Base.)
 
-#### movie-this '<movie name here>'
+#### movie-this 'movie name here'
 It shows you the following: 
   * Title of the movie.
   * Year the movie came out.
