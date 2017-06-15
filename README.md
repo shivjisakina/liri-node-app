@@ -5,9 +5,9 @@
 
 ### Liri takes in the following commands:
 
-#### my-tweets (shows your last 20 tweets)
+1. my-tweets (shows your last 20 tweets)
 
-#### spotify-this-song 'song name here' 
+2. spotify-this-song + 'song name here' 
 It shows you the following:
   * Artist(s)
   * The song's name
@@ -15,7 +15,7 @@ It shows you the following:
   * The album that the song is from
   (If no song is provided then the program will default to you to "The Sign" by Ace of Base.)
 
-#### movie-this 'movie name here'
+3. movie-this + 'movie name here'
 It shows you the following: 
   * Title of the movie.
   * Year the movie came out.
@@ -27,6 +27,6 @@ It shows you the following:
   * Rotten Tomatoes URL.
   (If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.')
   
-#### do-what-it-says
+4. do-what-it-says
 LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
 (It will run "spotify-this-song" for "I Want it That Way)
