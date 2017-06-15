@@ -19,12 +19,10 @@
 
 // MY-TWEETS
 // Show 20 latest tweets
-//
 
 // SPOTIFY-THIS-SONG
 // if search === true Show artist, song name, link, and album
 // else default to "The Sign" by Ace of the Base
-//
 
 // MOVIE-THIS
 /* The following info:
@@ -37,12 +35,10 @@
 * Actors in the movie.
 * Rotten Tomatoes URL. */
 // else output data  for 'Mr. Nobody'
-//
 
 // DO-WHAT-IT-SAYS
 // fs node package
 // take text inside random.txt and use it to call a LIRI command (I Want It That Way)
-//
 
 
 // Variables to hold the index in terminal
@@ -112,5 +108,15 @@ if (process2 === "spotify-this-song") {
 
     });
 }
+
+//----------------------------------------------------------------------------------------------------------------------
+
+// OMDB Variables
+
+var omdb = require('omdb');
+//var queryURL = "http://www.omdbapi.com/?t=" + process3 + "&y=&plot=short&apikey=40e9cece";
+
+
+
 
 //----------------------------------------------------------------------------------------------------------------------

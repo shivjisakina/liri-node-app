@@ -1,4 +1,4 @@
-console.log('this is loaded');
+//console.log('this is loaded');
 
 module.exports = {
   consumer_key: 'DsCvSwV5XGrwpfR3uMuAburHp',
