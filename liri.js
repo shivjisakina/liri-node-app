@@ -26,14 +26,14 @@
 
 // MOVIE-THIS
 /* The following info:
-* Title of the movie.
-* Year the movie came out.
-* IMDB Rating of the movie.
-* Country where the movie was produced.
-* Language of the movie.
-* Plot of the movie.
-* Actors in the movie.
-* Rotten Tomatoes URL. */
+ * Title of the movie.
+ * Year the movie came out.
+ * IMDB Rating of the movie.
+ * Country where the movie was produced.
+ * Language of the movie.
+ * Plot of the movie.
+ * Actors in the movie.
+ * Rotten Tomatoes URL. */
 // else output data  for 'Mr. Nobody'
 
 // DO-WHAT-IT-SAYS
@@ -61,9 +61,16 @@ var client = new Twitter(
 
 // if statement where the 2nd index is "my-tweets"
 if (process2 === "my-tweets") {
+
     // Getting 20 tweets
     var params = {screen_name: 'lirinodeucf'};
     client.get('statuses/user_timeline', params, function (error, tweets, response) {
+
+        // If theres an error, it'll throw it
+        if (error) {
+            throw error;
+        }
+        // If theres isnt an error, it'll console log the tweets
         if (!error) {
             //console.log(tweets);
         }
@@ -86,7 +93,7 @@ var Spotify = require('node-spotify-api');
 
 // Spotify API auth
 var spotify = new Spotify({
-        id: "cf7b029e5af94b77940489590854cc02",
+    id: "cf7b029e5af94b77940489590854cc02",
     secret: "9ddf0379eaff44848c8cb88614e048da"
 });
 
@@ -95,32 +102,92 @@ if (process2 === "spotify-this-song") {
 
     // Spotify search query
     spotify.search({type: 'track', query: process3}, function (err, data) {
+
         if (err) {
             return console.log('Error occurred: ' + err);
         }
         //console.log(data);
 
-        // For looping through items to get album and artist info
+        // ARTIST(S)
+
+        // For looping through items to get artist info
         for (var i = 0; i < data.tracks.items.length; i++) {
             console.log(data.tracks.items[i]);
 
             // For looping through items to get the artists name
             for (var j = 0; j < data.tracks.items[i].album.artists.length; j++) {
-                //console.log(data.tracks.items[i].album.artists[i].name);
+                console.log(data.tracks.items[i].album.artists[i].name);
+
+                //  COME BACK TO THIS BC ERROR!!!!!!!!!
+
+                /*  // For looping through items to get the artists name
+                 for (var k = 0; k < data.tracks.items[i].album.artists[i]; k++) {
+                 console.log(data.tracks.items[i].album.artists[i].name);
+                 }*/
             }
+
         }
+
+        // THE SONG'S NAME
+
+
 
     });
 }
 
 //----------------------------------------------------------------------------------------------------------------------
 
-// OMDB Variables
+/*// OMDB Variables
+ var omdb = require('omdb');
+ var queryURL = "http://www.omdbapi.com/?t=" + process3 + "&y=&plot=short&apikey=40e9cece";*/
+//console.log(queryURL);
 
-var omdb = require('omdb');
-//var queryURL = "http://www.omdbapi.com/?t=" + process3 + "&y=&plot=short&apikey=40e9cece";
+/*omdb.search('saw', function(err, movies) {
+
+ if(err) {
+ return console.error(err);
+ }
+
+ if(movies.length < 1) {
+ return console.log('No movies were found!');
+ }
+
+ movies.forEach(function(movie) {
+ console.log('%s (%d)', movie.title, movie.year);
+ });
+
+ });
+
+ omdb.get({ title: process3 }, true, function(err, movie) {
+
+ if(err) {
+ return console.error(err);
+ }
+
+ if(!movie) {
+ return console.log('Movie not found!');
+ }
+
+ console.log('%s (%d) %d/10', movie.title, movie.year, movie.imdb.rating);
+ console.log(movie.plot);
+
+ });
+
+ if (process3 === "movie-this") {
 
 
+ }*/
+
+
+/*
+ * Title of the movie.
+ * Year the movie came out.
+ * IMDB Rating of the movie.
+ * Country where the movie was produced.
+ * Language of the movie.
+ * Plot of the movie.
+ * Actors in the movie.
+ * Rotten Tomatoes URL. */
 
 
 //----------------------------------------------------------------------------------------------------------------------
