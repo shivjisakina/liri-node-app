@@ -138,15 +138,15 @@ if (process2 === "spotify-this-song") {
 //----------------------------------------------------------------------------------------------------------------------
 
 // OMDB
-/*
- * Title of the movie.
- * Year the movie came out.
- * IMDB Rating of the movie.
- * Country where the movie was produced.
- * Language of the movie.
- * Plot of the movie.
- * Actors in the movie.
- * Rotten Tomatoes URL. */
+
+ //* Title of the movie.
+ //* Year the movie came out.
+ //* IMDB Rating of the movie.
+ //* Country where the movie was produced.
+ //* Language of the movie.
+ //* Plot of the movie.
+ //* Actors in the movie.
+ //* Rotten Tomatoes URL.
 
 // Variables
 var request = require("request");
@@ -189,10 +189,7 @@ if (process2 === "movie-this") {
             // (Note: The syntax below for parsing isn't obvious. Just spend a few moments dissecting it).
             console.log("Title: " + JSON.parse(body).Title);
             console.log("Release Year: " + JSON.parse(body).Year);
-
-            for (var i = 0; i < JSON.parse(body).Ratings; i++) {
-                console.log("IMDB rating: " + JSON.parse(body).Ratings.imdbRating);
-            }
+            console.log("IMDB rating: " + JSON.parse(body).imdbRating);
             console.log("Country: " + JSON.parse(body).Country);
             console.log("Language: " + JSON.parse(body).Language);
             console.log("Plot: " + JSON.parse(body).Plot);
