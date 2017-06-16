@@ -112,11 +112,11 @@ if (process2 === "spotify-this-song") {
 
         // For looping through items to get artist info
         for (var i = 0; i < data.tracks.items.length; i++) {
-            console.log(data.tracks.items[i]);
+            //console.log(data.tracks.items[i]);
 
             // For looping through items to get the artists name
             for (var j = 0; j < data.tracks.items[i].album.artists.length; j++) {
-                console.log(data.tracks.items[i].album.artists[i].name);
+                //console.log(data.tracks.items[i].album.artists[j].name);
 
                 //  COME BACK TO THIS BC ERROR!!!!!!!!!
 
@@ -124,61 +124,20 @@ if (process2 === "spotify-this-song") {
                  for (var k = 0; k < data.tracks.items[i].album.artists[i]; k++) {
                  console.log(data.tracks.items[i].album.artists[i].name);
                  }*/
+
+                // THE SONG NAME
             }
 
         }
-
-        // THE SONG'S NAME
-
-
-
+        for (var j = 0; j < data.tracks.items[i].album.name.length; j++) {
+            //console.log(data.tracks.items[i].album.album_type.name);
+        }
     });
 }
 
 //----------------------------------------------------------------------------------------------------------------------
 
-/*// OMDB Variables
- var omdb = require('omdb');
- var queryURL = "http://www.omdbapi.com/?t=" + process3 + "&y=&plot=short&apikey=40e9cece";*/
-//console.log(queryURL);
-
-/*omdb.search('saw', function(err, movies) {
-
- if(err) {
- return console.error(err);
- }
-
- if(movies.length < 1) {
- return console.log('No movies were found!');
- }
-
- movies.forEach(function(movie) {
- console.log('%s (%d)', movie.title, movie.year);
- });
-
- });
-
- omdb.get({ title: process3 }, true, function(err, movie) {
-
- if(err) {
- return console.error(err);
- }
-
- if(!movie) {
- return console.log('Movie not found!');
- }
-
- console.log('%s (%d) %d/10', movie.title, movie.year, movie.imdb.rating);
- console.log(movie.plot);
-
- });
-
- if (process3 === "movie-this") {
-
-
- }*/
-
-
+// OMDB
 /*
  * Title of the movie.
  * Year the movie came out.
@@ -189,5 +148,57 @@ if (process2 === "spotify-this-song") {
  * Actors in the movie.
  * Rotten Tomatoes URL. */
 
+// Variables
+var request = require("request");
 
+var nodeArgs = process.argv;
+
+var movieName = process3;
+
+if (process2 === "movie-this") {
+
+    /*for (var i = 2; i < nodeArgs.length; i++) {
+
+        if (i > 2 && i < nodeArgs.length) {
+
+            movieName = movieName + "+" + nodeArgs[i];
+
+        }
+
+        else {
+
+            movieName += nodeArgs[i];
+
+        }
+    }*/
+
+    var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=40e9cece";
+
+    //console.log(queryUrl);
+
+    request(queryUrl, function (error, response, body) {
+
+        if (error) {
+            return console.log('Error occurred: ' + err);
+        }
+
+        // If the request is successful
+        if (!error && response.statusCode === 200) {
+
+            // Parse the body of the site and recover just the imdbRating
+            // (Note: The syntax below for parsing isn't obvious. Just spend a few moments dissecting it).
+            console.log("Title: " + JSON.parse(body).Title);
+            console.log("Release Year: " + JSON.parse(body).Year);
+
+            for (var i = 0; i < JSON.parse(body).Ratings; i++) {
+                console.log("IMDB rating: " + JSON.parse(body).Ratings.imdbRating);
+            }
+            console.log("Country: " + JSON.parse(body).Country);
+            console.log("Language: " + JSON.parse(body).Language);
+            console.log("Plot: " + JSON.parse(body).Plot);
+            console.log("Actors: " + JSON.parse(body).Actors);
+            //console.log("Rotton Tomatoes URL: " + JSON.parse(body).);
+        }
+    });
+}
 //----------------------------------------------------------------------------------------------------------------------
