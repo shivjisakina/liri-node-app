@@ -60,12 +60,18 @@ var fs = require("fs");
 switch (process2) {
 
     case "my-tweets":
+    case "tweets":
+    case "t":
+    case "-t":
 
         twitter();
 
         break;
 
     case "spotify-this-song":
+    case "spotify":
+    case "s":
+    case "-s":
 
         if (process3 === undefined) {
 
@@ -81,6 +87,9 @@ switch (process2) {
         break;
 
     case "this-movie":
+    case "movie":
+    case "m":
+    case "-m":
 
         if (process3 === undefined) {
             console.log("Your search was undefined, but here's the information for Mr. Nobody:");
@@ -95,6 +104,8 @@ switch (process2) {
         break;
 
     case "do-what-it-says":
+    case "d":
+    case "-d":
 
         readfile();
 
@@ -102,7 +113,7 @@ switch (process2) {
 
     default:
 
-        console.log("Please choose from one of the following: my-tweets, spotify-this-song, this-movie, do-what-it-says")
+        console.log("Please choose from one of the following: (my-tweets, tweets, t, -t), (spotify-this-song, spotify, s, -s), (this-movie, movie, m, -m,), or (do-what-it-says, d, -d)")
 
 }
 
