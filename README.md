@@ -3,6 +3,8 @@
 ### Overview
 In this assignment, I made LIRI. LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a Language Interpretation and Recognition Interface. LIRI is a command line node app that takes in parameters and gives you back data.
 
+------------------------------------------------------------------------------------------------------------------------------
+
 ### Liri takes in the following commands:
 
 #### 1. my-tweets 
@@ -11,6 +13,7 @@ Shows your last 20 tweets and when they were created
 ```
 ![Image of tweets in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/tweets1.png)
 
+------------------------------------------------------------------------------------------------------------------------------
 
 #### 2. spotify-this-song + 'song name here' 
 ```
@@ -26,6 +29,8 @@ It shows you the following:
 
 #### Default:
 ![Image of spotify default in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/spotifydefault.png)
+
+------------------------------------------------------------------------------------------------------------------------------
 
 #### 3. movie-this + 'movie name here'
 ```
@@ -45,9 +50,13 @@ It shows you the following:
 #### Default
 ![Image of movie default in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/moviedefault.png)
 
+------------------------------------------------------------------------------------------------------------------------------
+
 #### 4. do-what-it-says
 ```
 LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
 (It will run "spotify-this-song" for "I Want it That Way)
 ```
 ![Image of fs readfile in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/do-what-it-says.png)
+
+------------------------------------------------------------------------------------------------------------------------------
