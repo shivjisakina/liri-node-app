@@ -9,8 +9,9 @@ In this assignment, I made LIRI. LIRI is like iPhone's SIRI. However, while SIRI
 ```
 Shows your last 20 tweets
 ```
-
+```
 ![Image of tweets in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/Screen%20Shot%202017-06-16%20at%2011.45.10%20PM.png)
+```
 
 #### 2. spotify-this-song + 'song name here' 
 ```
@@ -34,9 +35,10 @@ It shows you the following:
   * Actors in the movie.
   (If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.')
 ```  
+```
 ![Image of movie info in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/Screen%20Shot%202017-06-17%20at%2010.14.48%20AM.png)
+```
 
-  
 #### 4. do-what-it-says
 ```
 LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
