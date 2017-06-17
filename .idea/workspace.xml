@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ddf3d92-ff5c-4ecb-9d46-13b9517cabc0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/spotifysearch.png" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -254,12 +254,12 @@
       <workItem from="1497631408274" duration="60000" />
       <workItem from="1497634394120" duration="8000" />
       <workItem from="1497635176140" duration="729000" />
-      <workItem from="1497708867914" duration="3408000" />
+      <workItem from="1497708867914" duration="3746000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25328000" />
+    <option name="totallyTimeSpent" value="25666000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="478" y="24" width="962" height="795" extended-state="0" />
