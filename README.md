@@ -9,7 +9,7 @@ In this assignment, I made LIRI. LIRI is like iPhone's SIRI. However, while SIRI
 ```
 Shows your last 20 tweets
 ```
-![Image of tweets in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/Screen%20Shot%202017-06-16%20at%2011.45.10%20PM.png)
+![Image of tweets in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/tweets1.png)
 
 
 #### 2. spotify-this-song + 'song name here' 
@@ -21,6 +21,9 @@ It shows you the following:
   * The album that the song is from
   (If no song is provided then the program will default to you to "The Sign" by Ace of Base.)
 ```
+![Image of spotify search in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/spotifysearch.png)
+
+![Image of spotify default in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/spotifydefault.png)
 
 #### 3. movie-this + 'movie name here'
 ```
@@ -34,12 +37,13 @@ It shows you the following:
   * Actors in the movie.
   (If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.')
 ```  
-
 ![Image of movie info in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/Screen%20Shot%202017-06-17%20at%2010.14.48%20AM.png)
 
+![Image of movie default in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/moviedefault.png)
 
 #### 4. do-what-it-says
 ```
 LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
 (It will run "spotify-this-song" for "I Want it That Way)
 ```
+![Image of fs readfile in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/do-what-it-says.png)
