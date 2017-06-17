@@ -59,6 +59,6 @@ It shows you the following:
 LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
 (It will run "spotify-this-song" for "I Want it That Way)
 ```
-![Image of fs readfile in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/do-what-it-says.png)
+![Image of fs readfile in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/dowhatitsays.png)
 
 ------------------------------------------------------------------------------------------------------------------------------
