@@ -39,6 +39,11 @@
 // fs node package
 // take text inside random.txt and use it to call a LIRI command (I Want It That Way)
 
+// BONUS
+// fs.writeFile
+// JSON.stringify data from functions(?)
+// write it in the log.txt file
+
 // ***Comment ending tags so I know everything ends***
 
 //----------------------------------------------------------------------------------------------------------------------
