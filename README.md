@@ -10,7 +10,7 @@ In this assignment, I made LIRI. LIRI is like iPhone's SIRI. However, while SIRI
 Shows your last 20 tweets
 ```
 
-![Image of tweets in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/tweets.png)
+![Image of tweets in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/Screen%20Shot%202017-06-16%20at%2011.45.10%20PM.png)
 
 #### 2. spotify-this-song + 'song name here' 
 ```
