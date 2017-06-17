@@ -40,27 +40,82 @@
 // fs node package
 // take text inside random.txt and use it to call a LIRI command (I Want It That Way)
 
+//----------------------------------------------------------------------------------------------------------------------
 
 // Variables to hold the index in terminal
 var process2 = process.argv[2];
 var process3 = process.argv[3];
 
+//  NPM variables and keys
+var keys = require('./keys.js');
+var Twitter = require('twitter');
+var Spotify = require('node-spotify-api');
+var request = require("request");
+var fs = require("fs");
+
 //----------------------------------------------------------------------------------------------------------------------
 
-// Twitter variables
-var keys = require('./keys.js');
-//console.log(keys);
+//SWITCH STATEMENT
 
-var Twitter = require('twitter');
+switch (process2) {
 
-// Twitter package for user based authentication:
-var client = new Twitter(
-    keys
-);
-//console.log(client);
+    case "my-tweets":
 
-// if statement where the 2nd index is "my-tweets"
-if (process2 === "my-tweets") {
+        twitter();
+
+        break;
+
+    case "spotify-this-song":
+
+        if (process3 === undefined) {
+
+            console.log("Your search was undefined, but here's The Sign by Ace of Base:");
+            process3 = "The Sign Ace of Base";
+            spotify();
+
+        } else {
+
+            spotify();
+
+        }
+        break;
+
+    case "this-movie":
+
+        if (process3 === undefined) {
+            console.log("Your search was undefined, but here's the information for Mr. Nobody:");
+            process3 = "Mr. Nobody";
+            omdb();
+
+        } else {
+
+            omdb();
+
+        }
+        break;
+
+    case "do-what-it-says":
+
+        readfile();
+
+        break;
+
+    default:
+
+        console.log("Please choose from one of the following: my-tweets, spotify-this-song, this-movie, do-what-it-says")
+
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+
+// TWITTER
+
+function twitter() {
+
+    // Twitter package for user based authentication:
+    var client = new Twitter(
+        keys
+    );
 
     // Getting 20 tweets
     var params = {screen_name: 'lirinodeucf'};
@@ -88,89 +143,53 @@ if (process2 === "my-tweets") {
 
 //----------------------------------------------------------------------------------------------------------------------
 
-// Spotify Variables
-var Spotify = require('node-spotify-api');
+// SPOTIFY
 
-// Spotify API auth
-var spotify = new Spotify({
-    id: "cf7b029e5af94b77940489590854cc02",
-    secret: "9ddf0379eaff44848c8cb88614e048da"
-});
+function spotify() {
 
-// if statement where the 2nd index is "spotify-this-song"
-if (process2 === "spotify-this-song") {
+    // Spotify API auth
+    var spotifyrequire = new Spotify({
+        id: "cf7b029e5af94b77940489590854cc02",
+        secret: "9ddf0379eaff44848c8cb88614e048da"
+    });
 
     // Spotify search query
-    spotify.search({type: 'track', query: process3}, function (err, data) {
+    spotifyrequire.search({type: 'track', query: process3, limit: 1}, function (err, data) {
 
         if (err) {
             return console.log('Error occurred: ' + err);
         }
         //console.log(data);
 
-        // ARTIST(S)
-
-        // For looping through items to get artist info
+        // For looping through items to get the items array
         for (var i = 0; i < data.tracks.items.length; i++) {
             //console.log(data.tracks.items[i]);
 
-            // For looping through items to get the artists name
-            for (var j = 0; j < data.tracks.items[i].album.artists.length; j++) {
-                //console.log(data.tracks.items[i].album.artists[j].name);
+            // ARTISTS NAME
+            console.log(data.tracks.items[i].album.artists[i].name);
 
-                //  COME BACK TO THIS BC ERROR!!!!!!!!!
+            // THE SONG NAME
+            console.log(data.tracks.items[i].album.name);
 
-                /*  // For looping through items to get the artists name
-                 for (var k = 0; k < data.tracks.items[i].album.artists[i]; k++) {
-                 console.log(data.tracks.items[i].album.artists[i].name);
-                 }*/
+            // THE LINK
+            console.log(data.tracks.items[i].album.uri);
 
-                // THE SONG NAME
-            }
+            // THE ALBUM NAME
+
 
         }
-        for (var j = 0; j < data.tracks.items[i].album.name.length; j++) {
-            //console.log(data.tracks.items[i].album.album_type.name);
-        }
+
     });
+
 }
 
 //----------------------------------------------------------------------------------------------------------------------
 
 // OMDB
 
- //* Title of the movie.
- //* Year the movie came out.
- //* IMDB Rating of the movie.
- //* Country where the movie was produced.
- //* Language of the movie.
- //* Plot of the movie.
- //* Actors in the movie.
- //* Rotten Tomatoes URL.
+function omdb() {
 
-// Variables
-var request = require("request");
-
-var nodeArgs = process.argv;
-
-var movieName = process3;
-
-if (process2 === "movie-this") {
-
-    /*for (var i = 2; i < nodeArgs.length; i++) {
-
-        if (i > 2 && i < nodeArgs.length) {
-
-            movieName = movieName + "+" + nodeArgs[i];
-
-        }
-
-        else {
-
-            movieName += nodeArgs[i];
-
-        }
-    }*/
+    var movieName = process3;
 
     var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=40e9cece";
 
@@ -182,11 +201,8 @@ if (process2 === "movie-this") {
             return console.log('Error occurred: ' + err);
         }
 
-        // If the request is successful
         if (!error && response.statusCode === 200) {
 
-            // Parse the body of the site and recover just the imdbRating
-            // (Note: The syntax below for parsing isn't obvious. Just spend a few moments dissecting it).
             console.log("Title: " + JSON.parse(body).Title);
             console.log("Release Year: " + JSON.parse(body).Year);
             console.log("IMDB rating: " + JSON.parse(body).imdbRating);
@@ -194,8 +210,31 @@ if (process2 === "movie-this") {
             console.log("Language: " + JSON.parse(body).Language);
             console.log("Plot: " + JSON.parse(body).Plot);
             console.log("Actors: " + JSON.parse(body).Actors);
-            //console.log("Rotton Tomatoes URL: " + JSON.parse(body).);
         }
     });
+
 }
+
+//----------------------------------------------------------------------------------------------------------------------
+
+// FS
+
+function readfile() {
+
+    fs.readFile("random.txt", "utf8", function(err, data) {
+        if (err) {
+            return console.log(err);
+        }
+
+        var data = data.split(",");
+
+        process3 = data[1];
+
+        console.log(data);
+
+        spotify();
+
+    });
+};
+
 //----------------------------------------------------------------------------------------------------------------------
