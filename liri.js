@@ -33,12 +33,13 @@
  * Language of the movie.
  * Plot of the movie.
  * Actors in the movie.
- * Rotten Tomatoes URL. */
-// else output data  for 'Mr. Nobody'
+// default output data  for 'Mr. Nobody'*/
 
 // DO-WHAT-IT-SAYS
 // fs node package
 // take text inside random.txt and use it to call a LIRI command (I Want It That Way)
+
+// ***Comment ending tags so I know everything ends***
 
 //----------------------------------------------------------------------------------------------------------------------
 
@@ -83,7 +84,7 @@ switch (process2) {
             process3 = "The Sign Ace of Base";
             spotify();
 
-        // Else statement that calls out spotify function if process3 is defined
+            // Else statement that calls out spotify function if process3 is defined
         } else {
 
             spotify();
@@ -106,7 +107,7 @@ switch (process2) {
             process3 = "Mr. Nobody";
             omdb();
 
-        // Else statement that calls out the omdb function if process3 is defined
+            // Else statement that calls out the omdb function if process3 is defined
         } else {
 
             omdb();
@@ -144,12 +145,14 @@ function twitter() {
 
     // Getting 20 tweets
     var params = {screen_name: 'lirinodeucf'};
+
     client.get('statuses/user_timeline', params, function (error, tweets, response) {
 
         // If theres an error, it'll throw it
         if (error) {
             throw error;
         }
+
         // If theres isnt an error, it'll console log the tweets
         if (!error) {
             //console.log(tweets);
@@ -165,8 +168,9 @@ function twitter() {
             console.log(tweets[i].created_at);
         }
 
-    });
-}
+    }); // client.get function
+
+} // twitter function
 
 //----------------------------------------------------------------------------------------------------------------------
 
@@ -188,27 +192,29 @@ function spotify() {
         }
         //console.log(data);
 
-        // For looping through items to get the items array
+        // For looping through data to get the items array
         for (var i = 0; i < data.tracks.items.length; i++) {
-            //console.log(data.tracks.items[i]);
+
+            // Sets the data from the for loop in a var to cut down code
+            var items = data.tracks.items[i];
 
             // ARTISTS NAME
-            console.log(data.tracks.items[i].album.artists[i].name);
+            console.log(items.album.artists[i].name);
 
             // THE SONG NAME
-            console.log(data.tracks.items[i].album.name);
+            console.log(items.album.name);
 
             // THE LINK
-            console.log(data.tracks.items[i].album.uri);
+            console.log(items.album.uri);
 
             // THE ALBUM NAME
-            // I cant find the album name in the object(?)
+            console.log(items.name);
 
-        }
+        } // for loop
 
-    });
+    }); // spotifyrequire function
 
-}
+} // spotify function
 
 //----------------------------------------------------------------------------------------------------------------------
 
@@ -244,9 +250,10 @@ function omdb() {
             console.log("Plot: " + JSON.parse(body).Plot);
             console.log("Actors: " + JSON.parse(body).Actors);
         }
-    });
 
-}
+    }); // request function
+
+} // omdb function
 
 //----------------------------------------------------------------------------------------------------------------------
 
@@ -255,7 +262,7 @@ function omdb() {
 function readfile() {
 
     // Read the random.txt file
-    fs.readFile("random.txt", "utf8", function(err, data) {
+    fs.readFile("random.txt", "utf8", function (err, data) {
 
         // If theres an error, console log it
         if (err) {
@@ -263,18 +270,38 @@ function readfile() {
         }
 
         // Split the data in random.txt by commas
-        var data = data.split(",");
+        var dataSplit = data.split(",");
 
         // Switch process3 with the first index from data
-        process3 = data[1];
+        process3 = dataSplit[1];
 
         // Console log the array
-        console.log(data);
+        //console.log(data);
 
         // Call out spotify function so it gives song information
         spotify();
 
-    });
-};
+    }); // fs.readFile function
+} // readFile function
 
 //----------------------------------------------------------------------------------------------------------------------
+
+function writefile() {
+
+    // Read the random.txt file
+    data = JSON.stringify(spotify());
+
+    fs.writefile("./log.txt", data, 'utf8', function (err, data) {
+
+        // If theres an error, console log it
+        if (err) {
+            return console.log(err);
+        }
+
+        // Call out the functions so it gives song information
+
+        console.log(data)
+
+    }); // fs.writefile function
+} // writefile function
+

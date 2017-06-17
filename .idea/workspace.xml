@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ddf3d92-ff5c-4ecb-9d46-13b9517cabc0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/log.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liri.js" afterPath="$PROJECT_DIR$/liri.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,8 +29,18 @@
       <file leaf-file-name="liri.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/liri.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="273" column="65" lean-forward="false" selection-start-line="273" selection-start-column="65" selection-end-line="273" selection-end-column="65" />
+            <state relative-caret-position="-741">
+              <caret line="206" column="23" lean-forward="true" selection-start-line="206" selection-start-column="23" selection-end-line="206" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="log.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/log.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -100,9 +112,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="530" />
+    <option name="x" value="213" />
     <option name="y" value="24" />
-    <option name="width" value="910" />
+    <option name="width" value="1227" />
     <option name="height" value="795" />
   </component>
   <component name="ProjectView">
@@ -244,18 +256,18 @@
       <workItem from="1497631408274" duration="60000" />
       <workItem from="1497634394120" duration="8000" />
       <workItem from="1497635176140" duration="729000" />
-      <workItem from="1497708867914" duration="5612000" />
+      <workItem from="1497708867914" duration="7840000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27532000" />
+    <option name="totallyTimeSpent" value="29760000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="530" y="24" width="910" height="795" extended-state="0" />
+    <frame x="213" y="24" width="1227" height="795" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2016129" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14767933" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -285,14 +297,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/liri2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1635">
-          <caret line="109" column="65" lean-forward="false" selection-start-line="109" selection-start-column="65" selection-end-line="109" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/keys.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -681,10 +685,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/log.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/liri.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="273" column="65" lean-forward="false" selection-start-line="273" selection-start-column="65" selection-end-line="273" selection-end-column="65" />
+        <state relative-caret-position="-741">
+          <caret line="206" column="23" lean-forward="true" selection-start-line="206" selection-start-column="23" selection-end-line="206" selection-end-column="23" />
           <folding />
         </state>
       </provider>
