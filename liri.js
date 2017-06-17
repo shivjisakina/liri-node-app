@@ -46,7 +46,7 @@
 var process2 = process.argv[2];
 var process3 = process.argv[3];
 
-//  NPM variables and keys
+//  NPM packages and keys
 var keys = require('./keys.js');
 var Twitter = require('twitter');
 var Spotify = require('node-spotify-api');
@@ -59,6 +59,7 @@ var fs = require("fs");
 
 switch (process2) {
 
+    // case that calls out twitter function
     case "my-tweets":
     case "tweets":
     case "t":
@@ -68,41 +69,53 @@ switch (process2) {
 
         break;
 
+    // case that calls out spotify function
     case "spotify-this-song":
     case "spotify":
     case "s":
     case "-s":
 
+        // If statement where process3 is undefined
         if (process3 === undefined) {
 
+            // Shows default info for "The Sign by Ace of Base"
             console.log("Your search was undefined, but here's The Sign by Ace of Base:");
             process3 = "The Sign Ace of Base";
             spotify();
 
+        // Else statement that calls out spotify function if process3 is defined
         } else {
 
             spotify();
 
         }
+
         break;
 
+    // case that calls out omdb function
     case "this-movie":
     case "movie":
     case "m":
     case "-m":
 
+        // If statement where process3 is undefined
         if (process3 === undefined) {
+
+            // Shows default info for "Mr. Nobody"
             console.log("Your search was undefined, but here's the information for Mr. Nobody:");
             process3 = "Mr. Nobody";
             omdb();
 
+        // Else statement that calls out the omdb function if process3 is defined
         } else {
 
             omdb();
 
         }
+
         break;
 
+    // case that calls out readfile function
     case "do-what-it-says":
     case "d":
     case "-d":
@@ -111,6 +124,7 @@ switch (process2) {
 
         break;
 
+    // default incase the user types in the wrong command
     default:
 
         console.log("Please choose from one of the following: (my-tweets, tweets, t, -t), (spotify-this-song, spotify, s, -s), (this-movie, movie, m, -m,), or (do-what-it-says, d, -d)")
@@ -141,10 +155,12 @@ function twitter() {
             //console.log(tweets);
         }
 
+        // Gets the tweets
         for (var i = 0; i < tweets.length; i++) {
             console.log(tweets[i].text);
         }
 
+        // Gets the time they were tweeted
         for (var i = 0; i < tweets.length; i++) {
             console.log(tweets[i].created_at);
         }
@@ -186,7 +202,7 @@ function spotify() {
             console.log(data.tracks.items[i].album.uri);
 
             // THE ALBUM NAME
-
+            // I cant find the album name in the object(?)
 
         }
 
@@ -200,20 +216,26 @@ function spotify() {
 
 function omdb() {
 
+    // Variable where movieName is the third index
     var movieName = process3;
 
+    // OMDB queryURL
     var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=40e9cece";
 
     //console.log(queryUrl);
 
+    // Request package function
     request(queryUrl, function (error, response, body) {
 
+        // If theres an error, itll console log it
         if (error) {
             return console.log('Error occurred: ' + err);
         }
 
+        // If there isnt an error
         if (!error && response.statusCode === 200) {
 
+            // Console log movie information
             console.log("Title: " + JSON.parse(body).Title);
             console.log("Release Year: " + JSON.parse(body).Year);
             console.log("IMDB rating: " + JSON.parse(body).imdbRating);
@@ -232,17 +254,24 @@ function omdb() {
 
 function readfile() {
 
+    // Read the random.txt file
     fs.readFile("random.txt", "utf8", function(err, data) {
+
+        // If theres an error, console log it
         if (err) {
             return console.log(err);
         }
 
+        // Split the data in random.txt by commas
         var data = data.split(",");
 
+        // Switch process3 with the first index from data
         process3 = data[1];
 
+        // Console log the array
         console.log(data);
 
+        // Call out spotify function so it gives song information
         spotify();
 
     });
