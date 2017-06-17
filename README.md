@@ -32,9 +32,10 @@ It shows you the following:
   * Language of the movie.
   * Plot of the movie.
   * Actors in the movie.
-  * Rotten Tomatoes URL.
   (If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.')
 ```  
+![Image of movie info in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/Screen%20Shot%202017-06-17%20at%2010.14.48%20AM.png)
+
   
 #### 4. do-what-it-says
 ```
