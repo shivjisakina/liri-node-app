@@ -1,3 +1,47 @@
+// PSEUDO CODE & INSTRUCTIONS
+
+// Write the code to grab data from keys.js and store in var
+// Get all of the packages and store them in variables(?)
+
+// Take in the following commands:
+// my-tweets
+// spotify-this-song
+// movie-this
+// do-what-it-says
+
+// Variables ill need:
+// var keys
+// var Twitter
+// var Spotify
+// var Request
+// var fs(?)
+// var searchTweets
+
+// MY-TWEETS
+// Show 20 latest tweets
+
+// SPOTIFY-THIS-SONG
+// if search === true Show artist, song name, link, and album
+// else default to "The Sign" by Ace of the Base
+
+// MOVIE-THIS
+/* The following info:
+ * Title of the movie.
+ * Year the movie came out.
+ * IMDB Rating of the movie.
+ * Country where the movie was produced.
+ * Language of the movie.
+ * Plot of the movie.
+ * Actors in the movie.
+ * Rotten Tomatoes URL. */
+// else output data  for 'Mr. Nobody'
+
+// DO-WHAT-IT-SAYS
+// fs node package
+// take text inside random.txt and use it to call a LIRI command (I Want It That Way)
+
+//----------------------------------------------------------------------------------------------------------------------
+
 // Variables to hold the index in terminal
 var process2 = process.argv[2];
 var process3 = process.argv[3];
@@ -14,20 +58,52 @@ var fs = require("fs");
 //SWITCH STATEMENT
 
 switch (process2) {
+
     case "my-tweets":
+
         twitter();
+
         break;
+
     case "spotify-this-song":
-        spotify();
+
+        if (process3 === undefined) {
+
+            console.log("Your search was undefined, but here's The Sign by Ace of Base:");
+            process3 = "The Sign Ace of Base";
+            spotify();
+
+        } else {
+
+            spotify();
+
+        }
         break;
+
     case "this-movie":
-        omdb();
+
+        if (process3 === undefined) {
+            console.log("Your search was undefined, but here's the information for Mr. Nobody:");
+            process3 = "Mr. Nobody";
+            omdb();
+
+        } else {
+
+            omdb();
+
+        }
         break;
+
     case "do-what-it-says":
+
         readfile();
+
         break;
+
     default:
+
         console.log("Please choose from one of the following: my-tweets, spotify-this-song, this-movie, do-what-it-says")
+
 }
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -85,24 +161,24 @@ function spotify() {
         }
         //console.log(data);
 
-        // ARTIST(S)
-
-        // For looping through items to get artist info
+        // For looping through items to get the items array
         for (var i = 0; i < data.tracks.items.length; i++) {
             //console.log(data.tracks.items[i]);
 
-            // For looping through items to get the artists name
-            for (var j = 0; j < data.tracks.items[i].album.artists.length; j++) {
-                console.log(data.tracks.items[i].album.artists[j].name);
+            // ARTISTS NAME
+            console.log(data.tracks.items[i].album.artists[i].name);
 
+            // THE SONG NAME
+            console.log(data.tracks.items[i].album.name);
 
-                // THE SONG NAME
-            }
+            // THE LINK
+            console.log(data.tracks.items[i].album.uri);
+
+            // THE ALBUM NAME
+
 
         }
-        /*for (var j = 0; j < data.tracks.items[i].album.name.length; j++) {
-            console.log(data.tracks.items[i].album.album_type.name);
-        }*/
+
     });
 
 }
@@ -125,11 +201,8 @@ function omdb() {
             return console.log('Error occurred: ' + err);
         }
 
-        // If the request is successful
         if (!error && response.statusCode === 200) {
 
-            // Parse the body of the site and recover just the imdbRating
-            // (Note: The syntax below for parsing isn't obvious. Just spend a few moments dissecting it).
             console.log("Title: " + JSON.parse(body).Title);
             console.log("Release Year: " + JSON.parse(body).Year);
             console.log("IMDB rating: " + JSON.parse(body).imdbRating);
@@ -137,7 +210,6 @@ function omdb() {
             console.log("Language: " + JSON.parse(body).Language);
             console.log("Plot: " + JSON.parse(body).Plot);
             console.log("Actors: " + JSON.parse(body).Actors);
-            //console.log("Rotton Tomatoes URL: " + JSON.parse(body).);
         }
     });
 
@@ -149,13 +221,19 @@ function omdb() {
 
 function readfile() {
 
-    // We will read the existing bank file
     fs.readFile("random.txt", "utf8", function(err, data) {
         if (err) {
             return console.log(err);
         }
 
-        console.log(data)
+        var data = data.split(",");
+
+        process3 = data[1];
+
+        console.log(data);
+
+        spotify();
+
     });
 };
 
