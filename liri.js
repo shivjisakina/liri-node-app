@@ -53,6 +53,7 @@ var Twitter = require('twitter');
 var Spotify = require('node-spotify-api');
 var request = require("request");
 var fs = require("fs");
+var output = require("output-file-sync");
 
 //----------------------------------------------------------------------------------------------------------------------
 
@@ -288,9 +289,12 @@ function readfile() {
 
 function writefile() {
 
-    // Read the random.txt file
-    data = JSON.stringify(spotify());
+    // Stringify the output from the functions
+    twitterData = JSON.stringify(spotify());
+    spotifyData = JSON.stringify(twitter());
+    omdbData = JSON.stringify(omdb());
 
+    // Read the random.txt file
     fs.writefile("./log.txt", data, 'utf8', function (err, data) {
 
         // If theres an error, console log it
