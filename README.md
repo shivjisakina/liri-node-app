@@ -7,6 +7,8 @@ In this assignment, I made LIRI. LIRI is like iPhone's SIRI. However, while SIRI
 
 ### Liri takes in the following commands:
 
+------------------------------------------------------------------------------------------------------------------------------
+
 #### 1. my-tweets 
 ```
 Shows your last 20 tweets and when they were created
