@@ -43,7 +43,6 @@ It shows you the following:
 ![Image of movie search in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/moviesearch.png)
 
 #### Default
->>>>>>> 17c6670faa5f6750f67409c1e67190f1c6bc0d24
 ![Image of movie default in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/moviedefault.png)
 
 #### 4. do-what-it-says
