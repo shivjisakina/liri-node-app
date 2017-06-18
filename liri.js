@@ -265,7 +265,7 @@ switch (process2) {
         }
 
         break;
-
+    // case that calls out chalk function
     case "chalk":
     case "c":
 
@@ -273,6 +273,7 @@ switch (process2) {
 
         break;
 
+    // case that calls out password function
     case "password":
     case "p":
     case "-p":
@@ -281,6 +282,7 @@ switch (process2) {
 
         break;
 
+    // case that calls out geocoder function
     case "location":
     case "l":
     case "-l":
