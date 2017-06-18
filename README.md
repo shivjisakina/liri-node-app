@@ -91,3 +91,11 @@ Changes the color of the text in the terminal
 ![Image of chalk default in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/chalk.png)
 
 ------------------------------------------------------------------------------------------------------------------------------
+#### 8. password 
+```
+Generates a random password for you
+```
+
+![Image of password in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/password.png)
+
+------------------------------------------------------------------------------------------------------------------------------
