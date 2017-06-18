@@ -99,6 +99,14 @@ Generates a random password for you
 ![Image of password in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/password.png)
 
 ------------------------------------------------------------------------------------------------------------------------------
+#### 9. location + 'a landmark or well known location" 
+```
+Generates the address for you
+```
+
+![Image of geocoder in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/geocoder.png)
+
+------------------------------------------------------------------------------------------------------------------------------
 #### Quick list of commands for your reference:
 
 * “node liri a” (will give you an error and show you options)
@@ -117,5 +125,6 @@ Generates a random password for you
 * “node liri c b” (turning the text blue)
 * “node liri c p” (turning the text magenta)
 * “node liri c y” (turning the text yellow)
+* “node liri l -landmark-” (turning the text yellow)
 
 ------------------------------------------------------------------------------------------------------------------------------
