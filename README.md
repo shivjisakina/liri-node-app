@@ -99,3 +99,21 @@ Generates a random password for you
 ![Image of password in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/password.png)
 
 ------------------------------------------------------------------------------------------------------------------------------
+#### Quick list of commands for your reference:
+
+“node liri a” (will give you an error and show you options)
+“node liri t” (tweets)
+“node liri s” (spotify default)
+“node liri s <song search>” (spotify search)
+“node liri m” (movie default)
+“node liri m <movie search>” (movie search)
+“node liri d” (do-what-it-says aka readfile)
+“node liri j” (9gag joke)
+“node liri 8” (8ball default)
+“node liri 8 <question>” (asking the 8ball a question)
+“node liri c a” (shows you text color options)
+“node liri c r” (turning the text red)
+“node liri c g” (turning the text green)
+“node liri c b” (turning the text blue)
+“node liri c p” (turning the text magenta)
+“node liri c y” (turning the text yellow)
