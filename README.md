@@ -83,3 +83,11 @@ Answers your burning questions
 ![Image of 8ball default in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/8balldefault.png)
 
 ------------------------------------------------------------------------------------------------------------------------------
+#### 7. chalk + 'your color choice'
+```
+Changes the color of the text in terminal for depending on the command
+```
+
+![Image of chalk default in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/chalk.png)
+
+------------------------------------------------------------------------------------------------------------------------------
