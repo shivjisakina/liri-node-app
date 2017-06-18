@@ -43,7 +43,7 @@
 // fs.writeFile
 // JSON.stringify data from functions(?)
 // write it in the log.txt file
-// append to file
+// append to file(?)
 
 // Extra packages I added
 // 9gag
@@ -78,6 +78,7 @@ var SaySomething = require('say-something');
 var starbucks = require('starbucks-store-finder');
 var chalk = require('chalk');
 var generatePassword = require('password-generator');
+var geocoder = require('geocoder');
 //var speech2textReq = require("speechtotextjs");
 //var outputFileSync = require("output-file-sync");
 //var knockknock = require('knock-knock-jokes');
@@ -277,6 +278,14 @@ switch (process2) {
     case "-p":
 
         password();
+
+        break;
+
+    case "location":
+    case "l":
+    case "-l":
+
+        geocodenpm();
 
         break;
 
@@ -611,6 +620,29 @@ function password() {
     console.log(customPassword());
 
 } // password function
+
+//---------------------------------------------------------------------------------------------------------------------
+
+// GEOCODER
+
+// function to get answer from 8ball
+function geocodenpm() {
+
+    geocoder.geocode(process3, function ( err, data ) {
+
+        if (err)
+            throw err;
+
+        //console.log(data)
+
+        for (var i = 0; i < data.results.length; i++) {
+            console.log("Location:", data.results[i].formatted_address)
+        }
+
+    });
+
+
+} // geocode function
 
 //----------------------------------------------------------------------------------------------------------------------
                                         // FUTURE DEVELOMENTS(?) & BONUS
