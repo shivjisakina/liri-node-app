@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ddf3d92-ff5c-4ecb-9d46-13b9517cabc0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/keys.js" afterPath="$PROJECT_DIR$/keys.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liri.js" afterPath="$PROJECT_DIR$/liri.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,8 +18,8 @@
       <file leaf-file-name="keys.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/keys.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="70" lean-forward="false" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
+            <state relative-caret-position="210">
+              <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -28,8 +28,8 @@
       <file leaf-file-name="liri.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/liri.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="276" column="8" lean-forward="false" selection-start-line="276" selection-start-column="8" selection-end-line="276" selection-end-column="8" />
+            <state relative-caret-position="396">
+              <caret line="243" column="24" lean-forward="false" selection-start-line="243" selection-start-column="24" selection-end-line="243" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -95,11 +95,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/keys.js" />
         <option value="$PROJECT_DIR$/liri2.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/log.txt" />
         <option value="$PROJECT_DIR$/knockknock.js" />
+        <option value="$PROJECT_DIR$/keys.js" />
         <option value="$PROJECT_DIR$/liri.js" />
       </list>
     </option>
@@ -261,12 +261,12 @@
       <workItem from="1497708867914" duration="8376000" />
       <workItem from="1497722531579" duration="9000" />
       <workItem from="1497722600939" duration="10748000" />
-      <workItem from="1497793745554" duration="311000" />
+      <workItem from="1497793745554" duration="537000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41364000" />
+    <option name="totallyTimeSpent" value="41590000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1392" height="797" extended-state="0" />
@@ -547,14 +547,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../liri-node-app1/liri.js" />
-    <entry file="file://$PROJECT_DIR$/keys.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="70" lean-forward="false" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/liri2.js" />
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -595,10 +587,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/keys.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/liri.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="276" column="8" lean-forward="false" selection-start-line="276" selection-start-column="8" selection-end-line="276" selection-end-column="8" />
+        <state relative-caret-position="396">
+          <caret line="243" column="24" lean-forward="false" selection-start-line="243" selection-start-column="24" selection-end-line="243" selection-end-column="24" />
           <folding />
         </state>
       </provider>

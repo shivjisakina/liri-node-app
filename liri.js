@@ -190,7 +190,7 @@ function twitter() {
 
     // Twitter package for user based authentication:
     var client = new Twitter(
-        keys
+        keys.twitterKeys
     );
 
     // Getting 20 tweets
@@ -240,10 +240,9 @@ function twitter() {
 function spotify() {
 
     // Spotify API auth
-    var spotifyrequire = new Spotify({
-        id: "cf7b029e5af94b77940489590854cc02",
-        secret: "9ddf0379eaff44848c8cb88614e048da"
-    });
+    var spotifyrequire = new Spotify(
+        keys.spotifyKeys
+    );
 
     // Spotify search query
     spotifyrequire.search({type: 'track', query: process3, limit: 1}, function (err, data) {
@@ -274,7 +273,7 @@ function spotify() {
             console.log("Song Title:", items.name);
 
             console.log('----------------------------------------------------------')
-        
+
     }); // spotifyrequire function
 
 } // spotify function
