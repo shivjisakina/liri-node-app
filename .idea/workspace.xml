@@ -25,7 +25,7 @@
       <file leaf-file-name="liri.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/liri.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
+            <state relative-caret-position="468">
               <caret line="180" column="217" lean-forward="false" selection-start-line="180" selection-start-column="217" selection-end-line="180" selection-end-column="217" />
               <folding />
             </state>
@@ -267,12 +267,12 @@
       <workItem from="1497635176140" duration="729000" />
       <workItem from="1497708867914" duration="8376000" />
       <workItem from="1497722531579" duration="9000" />
-      <workItem from="1497722600939" duration="8770000" />
+      <workItem from="1497722600939" duration="9286000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39075000" />
+    <option name="totallyTimeSpent" value="39591000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1392" height="797" extended-state="0" />
@@ -617,7 +617,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/liri.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
+        <state relative-caret-position="468">
           <caret line="180" column="217" lean-forward="false" selection-start-line="180" selection-start-column="217" selection-end-line="180" selection-end-column="217" />
           <folding />
         </state>
