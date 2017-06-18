@@ -107,17 +107,6 @@ switch (process2) {
         //Say something
         saySomething.now("Here are your last 20 tweets");
 
-        //When start talking
-        saySomething.on('talking', function (text) {
-            //console.log(text);
-            //console.log("I'm saying: " + text);
-        });
-
-        //After stop talking
-        saySomething.on('done', function () {
-            //console.log("I'm done talking");
-        });
-
         //----------------------------------------------------------------------------------------
 
         twitter();
@@ -143,17 +132,6 @@ switch (process2) {
             saySomething = new SaySomething();
             //Say something
             saySomething.now("Your search was undefined, but here's The Sign by Ace of Base:");
-
-            //When start talking
-            saySomething.on('talking', function (text) {
-                //console.log(text);
-                //console.log("I'm saying: " + text);
-            });
-
-            //After stop talking
-            saySomething.on('done', function () {
-                //console.log("I'm done talking");
-            });
 
             //----------------------------------------------------------------------------------------
 
@@ -186,17 +164,6 @@ switch (process2) {
             saySomething = new SaySomething();
             //Say something
             saySomething.now("Your search was undefined, but here's the information for Mr. Nobody:");
-
-            //When start talking
-            saySomething.on('talking', function (text) {
-                //console.log(text);
-                //console.log("I'm saying: " + text);
-            });
-
-            //After stop talking
-            saySomething.on('done', function () {
-                //console.log("I'm done talking");
-            });
 
             //----------------------------------------------------------------------------------------
 
@@ -247,17 +214,6 @@ switch (process2) {
             saySomething = new SaySomething();
             //Say something
             saySomething.now("Try asking the 8ball a question! (Tip: put your question in quotes)");
-
-            //When start talking
-            saySomething.on('talking', function (text) {
-                //console.log(text);
-                //console.log("I'm saying: " + text);
-            });
-
-            //After stop talking
-            saySomething.on('done', function () {
-                //console.log("I'm done talking");
-            });
 
             //----------------------------------------------------------------------------------------
 
