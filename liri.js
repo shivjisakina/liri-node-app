@@ -60,7 +60,9 @@ var Spotify = require('node-spotify-api');
 var request = require("request");
 var fs = require("fs");
 var gagScraper = require('9gag-scraper');
-var eightball = require('8ball')()
+var eightball = require('8ball')();
+var SaySomething = require('say-something');
+//var speech2textReq = require("speechtotextjs");
 //var outputFileSync = require("output-file-sync");
 //var knockknock = require('knock-knock-jokes');
 
@@ -76,6 +78,27 @@ switch (process2) {
     case "t":
     case "-t":
 
+        //----------------------------------------------------------------------------------------
+
+        // SAY SOMETHING
+
+        saySomething = new SaySomething();
+        //Say something
+        saySomething.now("Here are your last 20 tweets");
+
+        //When start talking
+        saySomething.on('talking', function (text) {
+            //console.log(text);
+            //console.log("I'm saying: " + text);
+        });
+
+        //After stop talking
+        saySomething.on('done', function () {
+            //console.log("I'm done talking");
+        });
+
+        //----------------------------------------------------------------------------------------
+
         twitter();
 
         break;
@@ -90,15 +113,36 @@ switch (process2) {
         if (process3 === undefined) {
 
             // Shows default info for "The Sign by Ace of Base"
-            console.log("Your search was undefined, but here's The Sign by Ace of Base:");
             process3 = "The Sign Ace of Base";
+
+            //----------------------------------------------------------------------------------------
+
+            // SAY SOMETHING
+
+            saySomething = new SaySomething();
+            //Say something
+            saySomething.now("Your search was undefined, but here's The Sign by Ace of Base:");
+
+            //When start talking
+            saySomething.on('talking', function (text) {
+                //console.log(text);
+                //console.log("I'm saying: " + text);
+            });
+
+            //After stop talking
+            saySomething.on('done', function () {
+                //console.log("I'm done talking");
+            });
+
+            //----------------------------------------------------------------------------------------
+
             spotify();
 
             // Else statement that calls out spotify function if process3 is defined
         } else {
 
             spotify();
-
+            saysomething()
         }
 
         break;
@@ -113,8 +157,29 @@ switch (process2) {
         if (process3 === undefined) {
 
             // Shows default info for "Mr. Nobody"
-            console.log("Your search was undefined, but here's the information for Mr. Nobody:");
             process3 = "Mr. Nobody";
+
+            //----------------------------------------------------------------------------------------
+
+            // SAY SOMETHING
+
+            saySomething = new SaySomething();
+            //Say something
+            saySomething.now("Your search was undefined, but here's the information for Mr. Nobody:");
+
+            //When start talking
+            saySomething.on('talking', function (text) {
+                //console.log(text);
+                //console.log("I'm saying: " + text);
+            });
+
+            //After stop talking
+            saySomething.on('done', function () {
+                //console.log("I'm done talking");
+            });
+
+            //----------------------------------------------------------------------------------------
+
             omdb();
 
             // Else statement that calls out the omdb function if process3 is defined
@@ -140,6 +205,7 @@ switch (process2) {
     case "j":
     case "9gag":
 
+
         getGags();
 
         break;
@@ -153,8 +219,27 @@ switch (process2) {
         // If statement where process3 is undefined
         if (process3 === undefined) {
 
-            // Shows default info for "Mr. Nobody"
             console.log("Try asking the 8ball a question! (Tip: put your question in quotes)");
+            //----------------------------------------------------------------------------------------
+
+            // SAY SOMETHING
+
+            saySomething = new SaySomething();
+            //Say something
+            saySomething.now("Try asking the 8ball a question! (Tip: put your question in quotes)");
+
+            //When start talking
+            saySomething.on('talking', function (text) {
+                //console.log(text);
+                //console.log("I'm saying: " + text);
+            });
+
+            //After stop talking
+            saySomething.on('done', function () {
+                //console.log("I'm done talking");
+            });
+
+            //----------------------------------------------------------------------------------------
 
             // Else statement that calls out the omdb function if process3 is defined
         } else {
@@ -381,6 +466,18 @@ function eightBall() {
 
 } // eightBall function
 
+//---------------------------------------------------------------------------------------------------------------------
+
+// SAY SOMETHING
+
+// function for say-something
+
+function saysomething() {
+
+
+
+}
+
 //----------------------------------------------------------------------------------------------------------------------
                                         // FUTURE DEVELOMENTS(?) & BONUS
 //----------------------------------------------------------------------------------------------------------------------
@@ -407,6 +504,42 @@ function eightBall() {
 } // knockknock() function*/
 
 //----------------------------------------------------------------------------------------------------------------------
+
+// SPEECH2TEXT
+// This is only supported in Chrome
+
+/*function speechtotext() {
+
+    new SpeechToText(function () {
+        speecht2text.setIsContinous(true);
+        speecht2text.setAllowInterimResults(true);
+        speecht2text.setMaxAlternatives(20);
+
+        console.log(speechtotext());
+
+        var lang = speecht2text.getAllSupportedLanguages();
+        speecht2text.setLanguage((lang[0]).key);  // english
+
+        console.log(lang);
+
+        speecht2text.start();
+
+        console.log(speecht2text.onEnd(function () {
+            alert(speecht2text.getText());
+        }));
+
+        setTimeout(function () {
+            speecht2text.stop();
+        }, 5000);
+
+    }, function () {
+        alert("Browser Not Supported");
+    });
+}
+
+speechtotext();*/
+
+//---------------------------------------------------------------------------------------------------------------------
 
 // BONUS
 
