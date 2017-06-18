@@ -66,8 +66,15 @@ LIRI will take the text inside of random.txt and then use it to call one of LIRI
 ```
 Gives you the meme title and url
 ```
-![Image of 9gag in terminal]()
+![Image of 9gag in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/9gag.png)
 
 ------------------------------------------------------------------------------------------------------------------------------
-#### 6. spotify-this-song + 'song name here' 
+#### 6. 8ball + 'your question here'
+
+#### Search
+![Image of 8ball search in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/8ball.png)
+(Pro tip: Ask the question over and over again untill you get the answer you want :stuck_out_tongue_closed_eyes:)
+#### Default
+![Image of 8ball default in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/8balldefault.png)
+
 ------------------------------------------------------------------------------------------------------------------------------
