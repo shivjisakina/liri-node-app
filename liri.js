@@ -45,14 +45,14 @@
 // write it in the log.txt file
 // append to file(?)
 
-// Extra packages I added
+// EXTRA PACKAGES I ADDED
 // 9gag
 // 8ball
 // say-something
 // chalk
 // password generator
 
-// Extra packages I tried to add
+// EXTRA PACKAGES I TRIED TO ADD (commented out at the bottom of the code)
 // knock knock jokes
 // speechtotext
 // starbucks locator
@@ -79,6 +79,8 @@ var starbucks = require('starbucks-store-finder');
 var chalk = require('chalk');
 var generatePassword = require('password-generator');
 var geocoder = require('geocoder');
+var inquirer = require("inquirer");
+var weather = require('weather-js');
 //var speech2textReq = require("speechtotextjs");
 //var outputFileSync = require("output-file-sync");
 //var knockknock = require('knock-knock-jokes');
@@ -288,6 +290,15 @@ switch (process2) {
     case "-l":
 
         geocodenpm();
+
+        break;
+
+    // case that calls out inquire function
+    case "weather":
+    case "w":
+    case "-w":
+
+        inquire();
 
         break;
 
@@ -641,10 +652,37 @@ function geocodenpm() {
             console.log("Location:", data.results[i].formatted_address)
         }
 
-    });
-
+    }); // geocoder.geocode function
 
 } // geocode function
+
+//---------------------------------------------------------------------------------------------------------------------
+
+// FINDING WEATHER USING INQUIRER
+
+// function to get address for any landmark
+function inquire() {
+
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "userInput",
+            message: "Type in a city and check the temperature!"
+        }
+
+    ]).then(function (answers) {
+
+        weather.find({search: answers.userInput, degreeType: 'F'}, function(err, result) {
+
+            if(err) console.log(err);
+
+            console.log(JSON.stringify("The Current Temperature is: " + result[0].current.temperature, null, 2));
+            console.log(JSON.stringify("It feels like: " + result[0].current.feelslike, null, 2));
+        });
+
+    });
+
+} // inquirer function
 
 //----------------------------------------------------------------------------------------------------------------------
                                         // FUTURE DEVELOMENTS(?) & BONUS
