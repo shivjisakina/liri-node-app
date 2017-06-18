@@ -62,3 +62,12 @@ LIRI will take the text inside of random.txt and then use it to call one of LIRI
 ![Image of fs readfile in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/dowhatitsays.png)
 
 ------------------------------------------------------------------------------------------------------------------------------
+#### 5. 9gag  
+```
+Gives you the meme title and url
+```
+![Image of 9gag in terminal]()
+
+------------------------------------------------------------------------------------------------------------------------------
+#### 6. spotify-this-song + 'song name here' 
+------------------------------------------------------------------------------------------------------------------------------
