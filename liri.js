@@ -581,7 +581,7 @@ function chalknpm (error) {
 
 // PASSWORD GENERATOR
 
-// function to get answer from 8ball
+// function to get password at random
 function password() {
 
     var maxLength = 18;
@@ -627,7 +627,7 @@ function password() {
 
 // GEOCODER
 
-// function to get answer from 8ball
+// function to get address for any landmark
 function geocodenpm() {
 
     geocoder.geocode(process3, function ( err, data ) {
