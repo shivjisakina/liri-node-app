@@ -190,7 +190,7 @@ function twitter() {
 
     // Twitter package for user based authentication:
     var client = new Twitter(
-        keys
+        keys.twitterKeys
     );
 
     // Getting 20 tweets
@@ -240,10 +240,9 @@ function twitter() {
 function spotify() {
 
     // Spotify API auth
-    var spotifyrequire = new Spotify({
-        id: "cf7b029e5af94b77940489590854cc02",
-        secret: "9ddf0379eaff44848c8cb88614e048da"
-    });
+    var spotifyrequire = new Spotify(
+        keys.spotifyKeys
+    );
 
     // Spotify search query
     spotifyrequire.search({type: 'track', query: process3, limit: 1}, function (err, data) {
@@ -253,11 +252,8 @@ function spotify() {
         }
         //console.log(data);
 
-        // For looping through data to get the items array
-        for (var i = 0; i < data.tracks.items.length; i++) {
-
             // Sets the data from the for loop in a var to cut down code
-            var items = data.tracks.items[i];
+            var items = data.tracks.items[0];
 
             // Adding breaks for better readability
             console.log('----------------------------------------------------------');
@@ -265,20 +261,18 @@ function spotify() {
             console.log('Spotify\'s search result for', process3, ":");
 
             // ARTISTS NAME
-            console.log(items.album.artists[i].name);
+            console.log("Artist:", items.album.artists[0].name);
 
             // THE SONG NAME
-            console.log(items.album.name);
+            console.log("Album name:", items.album.name);
 
             // THE LINK
-            console.log(items.album.uri);
+            console.log("URL:", items.album.uri);
 
             // THE ALBUM NAME
-            console.log(items.name);
+            console.log("Song Title:", items.name);
 
             console.log('----------------------------------------------------------')
-
-        } // for loop
 
     }); // spotifyrequire function
 
