@@ -24,6 +24,7 @@
     "knock-knock-jokes": "^1.7.0",
     "node-spotify-api": "^1.0.5",
     "output-file-sync": "^2.0.0",
+    "password-generator": "^2.1.0",
     "request": "^2.81.0",
     "say-something": "^0.1.2",
     "speechtotextjs": "^1.3.1",

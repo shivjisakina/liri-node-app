@@ -49,13 +49,13 @@
 // 9gag
 // 8ball
 // say-something
+// chalk
+// password generator
 
 // Extra packages I tried to add
 // knock knock jokes
 // speechtotext
 // starbucks locator
-// chalk?
-// password generator?
 
 // ***Comment ending tags so I know everything ends***
 
@@ -77,6 +77,7 @@ var eightball = require('8ball')();
 var SaySomething = require('say-something');
 var starbucks = require('starbucks-store-finder');
 var chalk = require('chalk');
+var generatePassword = require('password-generator');
 //var speech2textReq = require("speechtotextjs");
 //var outputFileSync = require("output-file-sync");
 //var knockknock = require('knock-knock-jokes');
@@ -271,6 +272,14 @@ switch (process2) {
 
         break;
 
+    case "password":
+    case "p":
+    case "-p":
+
+        password();
+
+        break;
+
     // default incase the user types in the wrong command
     default:
 
@@ -281,7 +290,8 @@ switch (process2) {
             "(do-what-it-says, d, -d), " +
             "(joke, j, 9gag), " +
             "(8ball, 8, 8b, b), " +
-            "or (chalk, c)")
+            "(chalk, c)" +
+            "or (password, p, -p)")
 
 }
 
@@ -452,6 +462,7 @@ function readfile() {
         spotify();
 
     }); // fs.readFile function
+
 } // readFile function
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -551,12 +562,55 @@ function chalknpm (error) {
                 "(magenta, m, -m)" +
                 "(yellow, y, -y)")
 
+    } // switch statement
 
-    }
+} // chalknpm function
 
+//---------------------------------------------------------------------------------------------------------------------
 
-}
+// PASSWORD GENERATOR
 
+// function to get answer from 8ball
+function password() {
+
+    var maxLength = 18;
+    var minLength = 12;
+    var uppercaseMinCount = 3;
+    var lowercaseMinCount = 3;
+    var numberMinCount = 2;
+    var specialMinCount = 2;
+    var UPPERCASE_RE = /([A-Z])/g;
+    var LOWERCASE_RE = /([a-z])/g;
+    var NUMBER_RE = /([\d])/g;
+    var SPECIAL_CHAR_RE = /([\?\-])/g;
+    var NON_REPEATING_CHAR_RE = /([\w\d\?\-])\1{2,}/g;
+
+    function isStrongEnough(password) {
+        var uc = password.match(UPPERCASE_RE);
+        var lc = password.match(LOWERCASE_RE);
+        var n = password.match(NUMBER_RE);
+        var sc = password.match(SPECIAL_CHAR_RE);
+        var nr = password.match(NON_REPEATING_CHAR_RE);
+        return password.length >= minLength &&
+            !nr &&
+            uc && uc.length >= uppercaseMinCount &&
+            lc && lc.length >= lowercaseMinCount &&
+            n && n.length >= numberMinCount &&
+            sc && sc.length >= specialMinCount;
+    } //isStrongEnough function
+
+    function customPassword() {
+        var password = "";
+        var randomLength = Math.floor(Math.random() * (maxLength - minLength)) + minLength;
+        while (!isStrongEnough(password)) {
+            password = generatePassword(randomLength, false, /[\w\d\?\-]/);
+        }
+        return password;
+    } //customPassword function
+
+    console.log(customPassword());
+
+} // password function
 
 //----------------------------------------------------------------------------------------------------------------------
                                         // FUTURE DEVELOMENTS(?) & BONUS
