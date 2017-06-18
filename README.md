@@ -107,6 +107,14 @@ Generates the address for you
 ![Image of geocoder in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/geocoder.png)
 
 ------------------------------------------------------------------------------------------------------------------------------
+#### 9. weather (also uses inquirer package)
+```
+Gives you the temperature of the city you searched for
+```
+
+![gif of inquirer and weather packages](https://github.com/shivjisakina/liri-node-app/blob/master/images/inquirerweather.gif)
+
+------------------------------------------------------------------------------------------------------------------------------
 #### Quick list of commands for your reference:
 
 * “node liri a” (will give you an error and show you options)
