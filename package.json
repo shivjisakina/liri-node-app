@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/shivjisakina/liri-node-app#readme",
   "dependencies": {
+    "8ball": "^1.0.6",
     "9gag-scraper": "^1.0.1",
     "antic": "^1.12.6",
     "knock-knock-jokes": "^1.7.0",

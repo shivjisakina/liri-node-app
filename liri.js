@@ -60,6 +60,7 @@ var Spotify = require('node-spotify-api');
 var request = require("request");
 var fs = require("fs");
 var gagScraper = require('9gag-scraper');
+var eightball = require('8ball')()
 //var outputFileSync = require("output-file-sync");
 //var knockknock = require('knock-knock-jokes');
 
@@ -143,14 +144,36 @@ switch (process2) {
 
         break;
 
+    // case that calls out 8ball function
+    case "8ball":
+    case "8":
+    case "8b":
+    case "b":
+
+        // If statement where process3 is undefined
+        if (process3 === undefined) {
+
+            // Shows default info for "Mr. Nobody"
+            console.log("Try asking the 8ball a question! (Tip: put your question in quotes)");
+
+            // Else statement that calls out the omdb function if process3 is defined
+        } else {
+
+            eightBall();
+
+        }
+
+        break;
+
     // case that calls out knock-knock function
+    /*
     case "knock-knock":
     case "k":
     case "knock":
 
         knockKnock();
 
-        break;
+        break;*/
 
     // default incase the user types in the wrong command
     default:
@@ -339,7 +362,7 @@ function readfile() {
 // 9GAG
 // (this isnt as cool as I thought it would be, but hey, it works!)
 
-// function to get jokes from 9gagnpm install -g antic
+// function to get jokes from 9gag
 function getGags() {
 
     new gagScraper("hot").getRandom(function (error, data) {
@@ -352,6 +375,17 @@ function getGags() {
     }); // gagScraper
 
 } // getGags function
+
+//---------------------------------------------------------------------------------------------------------------------
+
+// 8BALL
+
+// function to get answer from 8ball
+function eightBall() {
+
+    console.log(process3, {eightball})
+
+} // eightBall function
 
 //----------------------------------------------------------------------------------------------------------------------
                                         // FUTURE DEVELOMENTS(?) & BONUS
