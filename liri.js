@@ -45,6 +45,18 @@
 // write it in the log.txt file
 // append to file
 
+// Extra packages I added
+// 9gag
+// 8ball
+// say-something
+
+// Extra packages I tried to add
+// knock knock jokes
+// speechtotext
+// starbucks locator
+// chalk?
+// password generator?
+
 // ***Comment ending tags so I know everything ends***
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -52,6 +64,7 @@
 // Variables to hold the index in terminal
 var process2 = process.argv[2];
 var process3 = process.argv[3];
+var process4 = process.argv[4];
 
 //  NPM packages and keys
 var keys = require('./keys.js');
@@ -62,6 +75,8 @@ var fs = require("fs");
 var gagScraper = require('9gag-scraper');
 var eightball = require('8ball')();
 var SaySomething = require('say-something');
+var starbucks = require('starbucks-store-finder');
+var chalk = require('chalk');
 //var speech2textReq = require("speechtotextjs");
 //var outputFileSync = require("output-file-sync");
 //var knockknock = require('knock-knock-jokes');
@@ -142,7 +157,6 @@ switch (process2) {
         } else {
 
             spotify();
-            saysomething()
         }
 
         break;
@@ -250,20 +264,24 @@ switch (process2) {
 
         break;
 
-    // case that calls out knock-knock function
-    /*
-    case "knock-knock":
-    case "k":
-    case "knock":
+    case "chalk":
+    case "c":
 
-        knockKnock();
+        chalknpm();
 
-        break;*/
+        break;
 
     // default incase the user types in the wrong command
     default:
 
-        console.log("Please choose from one of the following: (my-tweets, tweets, t, -t), (spotify-this-song, spotify, s, -s), (this-movie, movie, m, -m,), (do-what-it-says, d, -d), (joke, j, 9gag), or (8ball, 8, 8b, b)")
+        console.log("Please choose from one of the following: " +
+            "(my-tweets, tweets, t, -t), " +
+            "(spotify-this-song, spotify, s, -s), " +
+            "(this-movie, movie, m, -m,), " +
+            "(do-what-it-says, d, -d), " +
+            "(joke, j, 9gag), " +
+            "(8ball, 8, 8b, b), " +
+            "or (chalk, c)")
 
 }
 
@@ -468,15 +486,77 @@ function eightBall() {
 
 //---------------------------------------------------------------------------------------------------------------------
 
-// SAY SOMETHING
+// CHALK
 
-// function for say-something
+function chalknpm (error) {
 
-function saysomething() {
+    if (error) {
+        console.log(error('Error!'));
+    }
 
+    // Switch statement for colors
+    switch (process3) {
+
+        //RED
+        case "red":
+        case "r":
+        case "-r":
+
+            console.log(chalk.styles.red.open + 'Red' + chalk.styles.red.close);
+
+            break;
+
+        // GREEN
+        case "green":
+        case "g":
+        case "-g":
+
+            console.log(chalk.styles.green.open + 'Green' + chalk.styles.green.close);
+
+            break;
+
+        // BLUE
+        case "blue":
+        case "b":
+        case "-b":
+
+            console.log(chalk.styles.blue.open + 'Blue' + chalk.styles.blue.close);
+
+            break;
+
+        // MAGENTA
+        case "magenta":
+        case "m":
+        case "-m":
+
+            console.log(chalk.styles.magenta.open + 'Magenta' + chalk.styles.magenta.close);
+
+            break;
+
+        // YELLOW
+        case "yellow":
+        case "y":
+        case "-y":
+
+            console.log(chalk.styles.yellow.open + 'Yellow' + chalk.styles.yellow.close);
+
+            break;
+
+        default:
+
+            console.log("Please choose from one of the following colors:" +
+                "(red, r, -r)" +
+                "(green, g, -g)" +
+                "(blue, b, -b)" +
+                "(magenta, m, -m)" +
+                "(yellow, y, -y)")
+
+
+    }
 
 
 }
+
 
 //----------------------------------------------------------------------------------------------------------------------
                                         // FUTURE DEVELOMENTS(?) & BONUS
@@ -534,10 +614,38 @@ function saysomething() {
 
     }, function () {
         alert("Browser Not Supported");
-    });
-}
+    }); // SpeechToText function
+} speechtotext() function
 
 speechtotext();*/
+
+//---------------------------------------------------------------------------------------------------------------------
+
+// STARBUCKS LOCATOR
+// This is making me find starbucks stores manually
+
+/*function starbuckslocator() {
+
+
+    const opts = {
+        Alafaya: [
+            "lat:", "28.608055",
+            "lng:", "-81.208283",
+            "address:", "4650 N Alafaya Trail, Orlando, FL 32826"]
+
+    }
+
+    starbucks(opts).then(stores => JSON.parse(stores))
+
+    console.log(opts.Alafaya[0])
+    console.log(opts.Alafaya[1])
+    console.log(opts.Alafaya[2])
+    console.log(opts.Alafaya[3])
+    console.log(opts.Alafaya[4])
+    console.log(opts.Alafaya[5])
+
+
+}*/
 
 //---------------------------------------------------------------------------------------------------------------------
 
