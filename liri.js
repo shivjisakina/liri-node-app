@@ -178,7 +178,7 @@ switch (process2) {
     // default incase the user types in the wrong command
     default:
 
-        console.log("Please choose from one of the following: (my-tweets, tweets, t, -t), (spotify-this-song, spotify, s, -s), (this-movie, movie, m, -m,), or (do-what-it-says, d, -d)")
+        console.log("Please choose from one of the following: (my-tweets, tweets, t, -t), (spotify-this-song, spotify, s, -s), (this-movie, movie, m, -m,), (do-what-it-says, d, -d), (joke, j, 9gag), or (8ball, 8, 8b, b)")
 
 }
 
