@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ddf3d92-ff5c-4ecb-9d46-13b9517cabc0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/liri.js" afterPath="$PROJECT_DIR$/liri.js" />
-    </list>
+    <list default="true" id="3ddf3d92-ff5c-4ecb-9d46-13b9517cabc0" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -269,12 +267,12 @@
       <workItem from="1497635176140" duration="729000" />
       <workItem from="1497708867914" duration="8376000" />
       <workItem from="1497722531579" duration="9000" />
-      <workItem from="1497722600939" duration="8694000" />
+      <workItem from="1497722600939" duration="8770000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38999000" />
+    <option name="totallyTimeSpent" value="39075000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1392" height="797" extended-state="0" />
