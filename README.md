@@ -85,7 +85,7 @@ Answers your burning questions
 ------------------------------------------------------------------------------------------------------------------------------
 #### 7. chalk + 'your color choice'
 ```
-Changes the color of the text in terminal for depending on the command
+Changes the color of the text in the terminal
 ```
 
 ![Image of chalk default in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/chalk.png)
