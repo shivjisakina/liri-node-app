@@ -134,5 +134,6 @@ Gives you the temperature of the city you searched for
 * “node liri c p” (turning the text magenta)
 * “node liri c y” (turning the text yellow)
 * “node liri l -landmark-” (gives you the location for any landmark)
+* “node liri w” (uses weather and inquirer packages to give you the weather in the city you chose)
 
 ------------------------------------------------------------------------------------------------------------------------------
