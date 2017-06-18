@@ -70,6 +70,9 @@ Gives you the meme title and url
 
 ------------------------------------------------------------------------------------------------------------------------------
 #### 6. 8ball + 'your question here'
+```
+Answers your burning questions
+```
 
 #### Search
 ![Image of 8ball search in terminal](https://github.com/shivjisakina/liri-node-app/blob/master/images/8ball.png)
