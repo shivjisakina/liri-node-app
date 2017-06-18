@@ -51,6 +51,8 @@
 // say-something
 // chalk
 // password generator
+// inquirer
+// weather-js
 
 // EXTRA PACKAGES I TRIED TO ADD (commented out at the bottom of the code)
 // knock knock jokes
@@ -658,7 +660,7 @@ function geocodenpm() {
 
 //---------------------------------------------------------------------------------------------------------------------
 
-// FINDING WEATHER USING INQUIRER
+// FINDING WEATHER USING INQUIRER AND WEATHER-JS
 
 // function to get address for any landmark
 function inquire() {
@@ -668,7 +670,7 @@ function inquire() {
             type: "input",
             name: "userInput",
             message: "Type in a city and check the temperature!"
-        }
+        } //inquirer.promt
 
     ]).then(function (answers) {
 
@@ -678,9 +680,9 @@ function inquire() {
 
             console.log(JSON.stringify("The Current Temperature is: " + result[0].current.temperature, null, 2));
             console.log(JSON.stringify("It feels like: " + result[0].current.feelslike, null, 2));
-        });
+        }); // .then function
 
-    });
+    }); // inquire() function
 
 } // inquirer function
 
