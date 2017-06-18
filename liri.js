@@ -43,6 +43,7 @@
 // fs.writeFile
 // JSON.stringify data from functions(?)
 // write it in the log.txt file
+// append to file
 
 // ***Comment ending tags so I know everything ends***
 
@@ -58,7 +59,8 @@ var Twitter = require('twitter');
 var Spotify = require('node-spotify-api');
 var request = require("request");
 var fs = require("fs");
-var output = require("output-file-sync");
+var outputFileSync = require("output-file-sync");
+var gagScraper = require('9gag-scraper');
 
 //----------------------------------------------------------------------------------------------------------------------
 
@@ -131,6 +133,15 @@ switch (process2) {
 
         break;
 
+    // case that calls out 9gag function
+    case "joke":
+    case "j":
+    case "9gag":
+
+        getGags();
+
+        break;
+
     // default incase the user types in the wrong command
     default:
 
@@ -164,15 +175,26 @@ function twitter() {
             //console.log(tweets);
         }
 
+        // Adding breaks for better readability in the terminal
+        console.log('----------------------------------------------------------');
+        console.log('Tweets:');
+        console.log('----------------------------------------------------------');
+
         // Gets the tweets
         for (var i = 0; i < tweets.length; i++) {
             console.log(tweets[i].text);
         }
 
+        console.log('----------------------------------------------------------');
+        console.log('Time:');
+        console.log('----------------------------------------------------------');
+
         // Gets the time they were tweeted
         for (var i = 0; i < tweets.length; i++) {
             console.log(tweets[i].created_at);
         }
+
+        console.log('----------------------------------------------------------')
 
     }); // client.get function
 
@@ -204,6 +226,11 @@ function spotify() {
             // Sets the data from the for loop in a var to cut down code
             var items = data.tracks.items[i];
 
+            // Adding breaks for better readability
+            console.log('----------------------------------------------------------');
+
+            console.log('Spotify\'s search result for', process3, ":");
+
             // ARTISTS NAME
             console.log(items.album.artists[i].name);
 
@@ -215,6 +242,8 @@ function spotify() {
 
             // THE ALBUM NAME
             console.log(items.name);
+
+            console.log('----------------------------------------------------------')
 
         } // for loop
 
@@ -247,6 +276,8 @@ function omdb() {
         // If there isnt an error
         if (!error && response.statusCode === 200) {
 
+            // Breaks for readability
+            console.log('----------------------------------------------------------');
             // Console log movie information
             console.log("Title: " + JSON.parse(body).Title);
             console.log("Release Year: " + JSON.parse(body).Year);
@@ -255,6 +286,9 @@ function omdb() {
             console.log("Language: " + JSON.parse(body).Language);
             console.log("Plot: " + JSON.parse(body).Plot);
             console.log("Actors: " + JSON.parse(body).Actors);
+
+            console.log('----------------------------------------------------------');
+
         }
 
     }); // request function
@@ -292,25 +326,51 @@ function readfile() {
 
 //----------------------------------------------------------------------------------------------------------------------
 
+// 9GAG
+// (this isnt as cool as I thought it would be, but hey, it works!)
+
+// function to get jokes from 9gag
+function getGags() {
+
+    new gagScraper("hot").getRandom(function (error, data) {
+
+        //console.log(data.id); // 9GAG post ID
+        console.log(data.url); // 9GAG post URL
+        console.log(data.title); // 9GAG post title
+        //console.log(data.image); // 9GAG post image link
+    });
+
+}
+
+//----------------------------------------------------------------------------------------------------------------------
+
+// BONUS
+
+/*
 function writefile() {
 
-    // Stringify the output from the functions
-    twitterData = JSON.stringify(spotify());
-    spotifyData = JSON.stringify(twitter());
-    omdbData = JSON.stringify(omdb());
+    // Stringify the output from the functions and push them into empty arrays
+    var twitterData = [];
+    var spotifyData = [];
+    var omdbData = [];
 
-    // Read the random.txt file
-    fs.writefile("./log.txt", data, 'utf8', function (err, data) {
+    twitterData.push(twitter());
+    spotifyData.push(spotify());
+    omdbrData.push(omdb())
 
-        // If theres an error, console log it
+    // Write on the random.txt file
+    fs.writeFile("log.txt", 'utf-8', function (err, data) {
+
+        //console.log(data);
+
+        // If there's an error, console log it
         if (err) {
             return console.log(err);
         }
 
-        // Call out the functions so it gives song information
-
-        console.log(data)
+        outputFileSync('log.txt', twitterData, spotifyData, omdbData, 'utf-8');
 
     }); // fs.writefile function
 } // writefile function
 
+writefile()*/
