@@ -18,6 +18,8 @@
   "homepage": "https://github.com/shivjisakina/liri-node-app#readme",
   "dependencies": {
     "9gag-scraper": "^1.0.1",
+    "antic": "^1.12.6",
+    "knock-knock-jokes": "^1.7.0",
     "node-spotify-api": "^1.0.5",
     "output-file-sync": "^2.0.0",
     "request": "^2.81.0",

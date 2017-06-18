@@ -59,8 +59,9 @@ var Twitter = require('twitter');
 var Spotify = require('node-spotify-api');
 var request = require("request");
 var fs = require("fs");
-var outputFileSync = require("output-file-sync");
 var gagScraper = require('9gag-scraper');
+//var outputFileSync = require("output-file-sync");
+//var knockknock = require('knock-knock-jokes');
 
 //----------------------------------------------------------------------------------------------------------------------
 
@@ -139,6 +140,15 @@ switch (process2) {
     case "9gag":
 
         getGags();
+
+        break;
+
+    // case that calls out knock-knock function
+    case "knock-knock":
+    case "k":
+    case "knock":
+
+        knockKnock();
 
         break;
 
@@ -329,7 +339,7 @@ function readfile() {
 // 9GAG
 // (this isnt as cool as I thought it would be, but hey, it works!)
 
-// function to get jokes from 9gag
+// function to get jokes from 9gagnpm install -g antic
 function getGags() {
 
     new gagScraper("hot").getRandom(function (error, data) {
@@ -338,9 +348,35 @@ function getGags() {
         console.log(data.url); // 9GAG post URL
         console.log(data.title); // 9GAG post title
         //console.log(data.image); // 9GAG post image link
-    });
 
-}
+    }); // gagScraper
+
+} // getGags function
+
+//----------------------------------------------------------------------------------------------------------------------
+                                        // FUTURE DEVELOMENTS(?) & BONUS
+//----------------------------------------------------------------------------------------------------------------------
+
+// KNOCK KNOCK
+
+// function to get jokes from knock-knock-jokes
+// The documentation on this package wasn't great :(
+
+/*function knockKnock() {
+
+
+    knockknock(function (error, response, body) {
+
+        // If theres an error, itll console log it
+        if (error) {
+            return console.log('Error occurred: ' + err);
+        }
+
+        console.log(response)
+        console.log(body)
+
+    }); //knockknock params function
+} // knockknock() function*/
 
 //----------------------------------------------------------------------------------------------------------------------
 
