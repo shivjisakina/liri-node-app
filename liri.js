@@ -360,7 +360,7 @@ function spotify() {
             console.log("Album name:", items.album.name);
 
             // THE LINK
-            console.log("URL:", items.album.uri);
+            console.log("URL:", items.preview_url);
 
             // THE ALBUM NAME
             console.log("Song Title:", items.name);
