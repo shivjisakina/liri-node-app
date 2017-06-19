@@ -301,26 +301,18 @@ function twitter() {
             //console.log(tweets);
         }
 
-        // Adding breaks for better readability in the terminal
-        console.log('----------------------------------------------------------');
-        console.log('Tweets:');
-        console.log('----------------------------------------------------------');
-
+        // Adding titles for better readability in the terminal
+        console.log('Tweets and times:');
+        
         // Gets the tweets
         for (var i = 0; i < tweets.length; i++) {
+
             console.log(tweets[i].text);
-        }
-
-        console.log('----------------------------------------------------------');
-        console.log('Time:');
-        console.log('----------------------------------------------------------');
-
-        // Gets the time they were tweeted
-        for (var i = 0; i < tweets.length; i++) {
             console.log(tweets[i].created_at);
-        }
 
-        console.log('----------------------------------------------------------')
+            console.log('----------------------------------------------------------');
+
+        }
 
     }); // client.get function
 
